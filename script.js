@@ -1,7 +1,7 @@
 const createContainer = document.createElement("div");
 const createColumn = document.createElement("div");
 const heading = document.createElement("h1");
-heading.setAttribute("id","title");
+heading.setAttribute("id", "title");
 heading.style.textAlign = "center";
 const para = document.createElement("p");
 
@@ -21,7 +21,9 @@ createColumn.appendChild(para);
 
 const createContainerForCal = document.createElement("div");
 const createRow = document.createElement("div");
-
+const create_Form = document.createElement("form");
+create_Form.setAttribute("name", "form1");
+create_Form.setAttribute("id", "form1");
 //input Btn
 
 const inputBtn = document.createElement("input");
@@ -29,7 +31,8 @@ inputBtn.setAttribute("placeholder", "0");
 inputBtn.setAttribute("type", "text");
 inputBtn.setAttribute("class", "form-control");
 inputBtn.setAttribute("id", "result");
-inputBtn.required = true;
+inputBtn.setAttribute("name", "result");
+//inputBtn.required = true;
 
 //button creation C
 const btnC = document.createElement("button");
@@ -39,7 +42,7 @@ btnC.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-danger rounded-0 p-2"
 );
-btnC.addEventListener("click", function () {
+btnC.addEventListener("keypress", function () {
   display("C");
 });
 //BackArrow
@@ -49,7 +52,7 @@ backArrow.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-dark rounded-0 p-2"
 );
-backArrow.addEventListener("click", function () {
+backArrow.addEventListener("keypress", function () {
   display("Back");
 });
 
@@ -60,7 +63,7 @@ dot.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-dark rounded-0 p-2"
 );
-dot.addEventListener("click", function () {
+dot.addEventListener("keypress", function () {
   display(".");
 });
 
@@ -72,7 +75,7 @@ multiply.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-primary rounded-0 p-2"
 );
-multiply.addEventListener("click", function () {
+multiply.addEventListener("keypress", function () {
   display("X");
 });
 
@@ -84,7 +87,7 @@ sevenBtn.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-dark rounded-0 p-2"
 );
-sevenBtn.addEventListener("click", function () {
+sevenBtn.addEventListener("keypress", function () {
   display("7");
 });
 
@@ -94,7 +97,7 @@ eightBtn.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-dark rounded-0 p-2"
 );
-eightBtn.addEventListener("click", function () {
+eightBtn.addEventListener("keypress", function () {
   display("8");
 });
 
@@ -104,7 +107,7 @@ nineBtn.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-dark rounded-0 p-2"
 );
-nineBtn.addEventListener("click", function () {
+nineBtn.addEventListener("keypress", function () {
   display("9");
 });
 
@@ -114,7 +117,7 @@ divideBtn.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-primary rounded-0 p-2"
 );
-divideBtn.addEventListener("click", function () {
+divideBtn.addEventListener("keypress", function () {
   display("/");
 });
 
@@ -125,7 +128,7 @@ fourBtn.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-dark rounded-0 p-2"
 );
-fourBtn.addEventListener("click", function () {
+fourBtn.addEventListener("keypress", function () {
   display("4");
 });
 
@@ -135,7 +138,7 @@ fiveBtn.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-dark rounded-0 p-2"
 );
-fiveBtn.addEventListener("click", function () {
+fiveBtn.addEventListener("keypress", function () {
   display("5");
 });
 
@@ -145,18 +148,18 @@ sixBtn.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-dark rounded-0 p-2"
 );
-sixBtn.addEventListener("click", function () {
+sixBtn.addEventListener("keypress", function () {
   display("6");
 });
 
 const minusBtn = document.createElement("button");
 minusBtn.innerHTML = "-";
-minusBtn.setAttribute("id","subtract");
+minusBtn.setAttribute("id", "subtract");
 minusBtn.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-primary rounded-0 p-2"
 );
-minusBtn.addEventListener("click", function () {
+minusBtn.addEventListener("keypress", function () {
   display("-");
 });
 
@@ -167,7 +170,7 @@ oneBtn.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-dark rounded-0 p-2"
 );
-oneBtn.addEventListener("click", function () {
+oneBtn.addEventListener("keypress", function () {
   display("1");
 });
 
@@ -177,8 +180,8 @@ twoBtn.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-dark rounded-0 p-2"
 );
-twoBtn.addEventListener("click", function () {
-  display("2");
+twoBtn.addEventListener("keypress", function () {
+  keypress("2");
 });
 
 const threeBtn = document.createElement("button");
@@ -187,78 +190,190 @@ threeBtn.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-dark rounded-0 p-2"
 );
-threeBtn.addEventListener("click", function () {
+threeBtn.addEventListener("keypress", function () {
   display("3");
 });
 
 const plusBtn = document.createElement("button");
 plusBtn.innerHTML = "+";
-plusBtn.setAttribute("id","add");
+plusBtn.setAttribute("id", "add");
 plusBtn.setAttribute(
   "class",
   "col-lg-3 col-md-4  col-sm-4 col-xs-2 bg-light text-primary rounded-0 p-2"
 );
-plusBtn.addEventListener("click", function () {
+plusBtn.addEventListener("keypress", function () {
   display("+");
 });
 
-//0,00,= 
+//0,00,=
 const zeroBtn = document.createElement("button");
 zeroBtn.innerHTML = "0";
-zeroBtn.setAttribute("id","zero");
+zeroBtn.setAttribute("id", "zero");
 zeroBtn.setAttribute(
   "class",
-  "col-lg-3 col-md-4  col-sm-4 col-xs-2  bg-light text-dark rounded-0 p-2");
-  
-zeroBtn.addEventListener("click", function () {
+  "col-lg-3 col-md-4  col-sm-4 col-xs-2  bg-light text-dark rounded-0 p-2"
+);
+
+zeroBtn.addEventListener("keypress", function () {
   display("0");
 });
 
 const zeroBtnDouble = document.createElement("button");
 zeroBtnDouble.innerHTML = "00";
-zeroBtnDouble.setAttribute("id","doubleZero");
+zeroBtnDouble.setAttribute("id", "doubleZero");
 zeroBtnDouble.setAttribute(
   "class",
-  "col-lg-3 col-md-4  col-sm-4 col-xs-2  bg-light text-dark rounded-0  p-2");
-  
-  zeroBtnDouble.addEventListener("click", function () {
+  "col-lg-3 col-md-4  col-sm-4 col-xs-2  bg-light text-dark rounded-0  p-2"
+);
+
+zeroBtnDouble.addEventListener("keypress", function () {
   display("00");
 });
 const isEqual = document.createElement("button");
 isEqual.innerHTML = "=";
-isEqual.setAttribute("id","equal");
-isEqual.setAttribute(
-  "class",
-  "col-lg-6 bg-primary rounded-0 p-2");
-  
-  isEqual.addEventListener("click", function () {
+isEqual.setAttribute("id", "equal");
+isEqual.setAttribute("class", "col-lg-6 bg-primary rounded-0 p-2");
+
+isEqual.addEventListener("keypress", function () {
   display("=");
 });
 
 document.body.appendChild(createContainerForCal);
 createContainer.appendChild(createRow);
-createRow.appendChild(inputBtn);
-createRow.appendChild(btnC);
-createRow.appendChild(backArrow);
-createRow.appendChild(dot);
-createRow.appendChild(multiply);
-createRow.appendChild(sevenBtn);
-createRow.appendChild(eightBtn);
-createRow.appendChild(nineBtn);
-createRow.appendChild(divideBtn);
-createRow.appendChild(fiveBtn);
-createRow.appendChild(fourBtn);
-createRow.appendChild(sixBtn);
-createRow.appendChild(minusBtn);
-createRow.appendChild(oneBtn);
-createRow.appendChild(twoBtn);
-createRow.appendChild(threeBtn);
-createRow.appendChild(plusBtn);
-createRow.appendChild(zeroBtn);
-createRow.appendChild(zeroBtnDouble);
-createRow.appendChild(isEqual);
+createRow.appendChild(create_Form);
+create_Form.appendChild(inputBtn);
+create_Form.appendChild(btnC);
+create_Form.appendChild(backArrow);
+create_Form.appendChild(dot);
+create_Form.appendChild(multiply);
+create_Form.appendChild(sevenBtn);
+create_Form.appendChild(eightBtn);
+create_Form.appendChild(nineBtn);
+create_Form.appendChild(divideBtn);
+create_Form.appendChild(fiveBtn);
+create_Form.appendChild(fourBtn);
+create_Form.appendChild(sixBtn);
+create_Form.appendChild(minusBtn);
+create_Form.appendChild(oneBtn);
+create_Form.appendChild(twoBtn);
+create_Form.appendChild(threeBtn);
+create_Form.appendChild(plusBtn);
+create_Form.appendChild(zeroBtn);
+create_Form.appendChild(zeroBtnDouble);
+create_Form.appendChild(isEqual);
+document.body.addEventListener("keydown", keypress);
 
-function display(event) {
-  event.preventDefault();
- // alert(event);
+function display(e) {
+  // event.preventDefault();
+  let inputValue = document.getElementById("result");
+  //alert(inputValue.value);
+}
+
+function keypress(e) {
+  
+  
+  let inputValue = document.getElementById("result");
+  inputValue.innerHTML = e.key;
+  finalValue = inputValue.innerHTML ;
+  console.log("Parsed Val", parseInt(e.key));
+  if(e.key === "="){
+    calculate();
+  }
+ 
+  
+
+}
+////valication Check
+function validate(e) {
+  if (
+    !(
+      parseInt(e.key) === 0 ||
+      parseInt(e.key) === 1 ||
+      parseInt(e.key) === 2 ||
+      parseInt(e.key) === 3 ||
+      parseInt(e.key) === 4 ||
+      parseInt(e.key) === 5 ||
+      parseInt(e.key) === 6 ||
+      parseInt(e.key) === 7 ||
+      parseInt(e.key) === 8 ||
+      parseInt(e.key) === 9 ||
+      e.key !== "*" ||
+      e.key !== "-" ||
+      e.key !== "+" ||
+      e.key !== "/" ||
+      e.key !== "%"
+    )
+  ) {
+    alert("Only Numbers allowed");
+  }
+
+}
+function calculate() {
+  let operationValue = 0;
+  let finalValue = document.getElementById("result").value;
+  console.log("finalValue",finalValue);
+
+  //Addition
+  
+  if(finalValue.includes("+")) {
+  const [num1, num2] = finalValue.split('+');
+  console.log("Final value " + finalValue,num1,num2);
+  operationValue = parseFloat(num1) + parseFloat(num2);
+  let result = document.getElementById("result");
+  result.innerHTML = operationValue;
+  console.log("operationValue"+operationValue);
+  console.log("ithu noku"+result.innerHTML);
+  
+  }
+
+  //Substraction
+  if(finalValue.includes("-")) {
+    const [num1, num2] = finalValue.split('-');
+    console.log("Final value " + finalValue,num1,num2);
+    operationValue = parseFloat(num1) - parseFloat(num2);
+    let result = document.getElementById("result");
+    result.innerHTML = operationValue;
+    console.log("operationValue"+operationValue);
+    console.log("ithu noku"+result.innerHTML);
+    
+  }
+
+//Multiplication
+if(finalValue.includes("*")) {
+  const [num1, num2] = finalValue.split('*');
+  console.log("Final value " + finalValue,num1,num2);
+  operationValue = parseFloat(num1) * parseFloat(num2);
+  let result = document.getElementById("result");
+  result.innerHTML = operationValue;
+  console.log("operationValue"+operationValue);
+  console.log("ithu noku"+result.innerHTML);
+  
+}
+
+  //Division
+  if(finalValue.includes("/")) {
+    const [num1, num2] = finalValue.split('/');
+    console.log("Final value " + finalValue,num1,num2);
+    operationValue = parseFloat(num1) / parseFloat(num2);
+    let result = document.getElementById("result");
+    result.innerHTML = operationValue;
+    console.log("operationValue"+operationValue);
+    console.log("ithu noku"+result.innerHTML);
+    
+  }
+
+  //Modulus
+  if(finalValue.includes("%")) {
+    const [num1, num2] = finalValue.split('%');
+    console.log("Final value " + finalValue,num1,num2);
+    operationValue = parseFloat(num1) % parseFloat(num2);
+    let result = document.getElementById("result");
+    result.innerHTML = operationValue;
+    console.log("operationValue"+operationValue);
+    console.log("ithu noku"+result.innerHTML);
+    
+  }
+
+
+
 }
